@@ -14,14 +14,14 @@ public class RemovingVowelsTest {
 
 
     @BeforeClass
-    private void setUp() {
+    public void setUp() {
         //This method runs even before the test cases and initialize
         // the variable with required value.
         this.removingVowels = new RemovingVowels();
     }
 
     @AfterClass
-    private void tearDown() {
+    public void tearDown() {
         //This method runs after the execution of all remaining methods
         // and reassign the required values.
         this.removingVowels = null;
@@ -33,7 +33,7 @@ public class RemovingVowelsTest {
     String array which contains places.
      */
     @Test
-    private void givenStringArrayShouldReturnTheExpectedArray() {
+    public void givenStringArrayShouldReturnTheExpectedArray() {
         String[] arrayOfPlaces = {"India", "New Zealand", "England", "Tamil Nadu"};
         assertTrue(removingVowels.assigner(arrayOfPlaces));
         String[] expectedOutput =  {"nd", "Nw Zlnd", "nglnd", "Tml Nd"};
@@ -46,7 +46,7 @@ public class RemovingVowelsTest {
      */
 
     @Test(expected = InvalidParameterException.class)
-    private void givenStringShouldReturnInvalidParameterException() {
+    public void givenStringShouldReturnInvalidParameterException() {
         String places = "India, New Zealand, England";
         removingVowels.assigner(places);
 
@@ -58,7 +58,7 @@ public class RemovingVowelsTest {
      */
 
     @Test
-    private void givenStringNullArrayShouldReturnNull() {
+    public void givenStringNullArrayShouldReturnNull() {
         String[] arrayOfPlaces = null;
         assertTrue(removingVowels.assigner(arrayOfPlaces));
         assertNull(removingVowels.vowelsRemover());
@@ -70,7 +70,7 @@ public class RemovingVowelsTest {
      */
 
     @Test
-    private void givenStringArrayShouldReturnTheEmptyArray() {
+    public void givenStringArrayShouldReturnTheEmptyArray() {
         String[] arrayOfPlaces = {"aeiou"};
         assertTrue(removingVowels.assigner(arrayOfPlaces));
         String[] expectedOutput =  {};

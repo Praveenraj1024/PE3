@@ -12,14 +12,14 @@ public class AdditionOfMatrixTest {
     private AdditionOfMatrix additionOfMatrix
 
     @BeforeClass
-    private void setUp() {
+    public void setUp() {
         //This method runs even before the test cases and initialize
         // the variable with required value.
         this.additionOfMatrix = new AdditionOfMatrix();
     }
 
     @AfterClass
-    private void tearDown() {
+    public void tearDown() {
         //This method runs after the execution of all remaining methods
         // and reassign the required values.
         this.additionOfMatrix = null;
@@ -35,7 +35,7 @@ public class AdditionOfMatrixTest {
 
 
     @Test
-    private void givenNumberOfRowsAndColumnsAndArraysShouldReturnAnExpectedArray() {
+    public void givenNumberOfRowsAndColumnsAndArraysShouldReturnAnExpectedArray() {
         int rows = 2;
         int columns = 2;
         int[][] firstArray = {{1, 2}, {3, 4}};
@@ -58,7 +58,7 @@ public class AdditionOfMatrixTest {
 
 
     @Test(expected = ArrayIndexOutOfBoundsException.class)
-    private void givenNumberOfRowsAndColumnsAndArraysShouldReturnArrayIndexOutOfBoundsException() {
+    public void givenNumberOfRowsAndColumnsAndArraysShouldReturnArrayIndexOutOfBoundsException() {
         int rows = 2;
         int columns = 1;
         int[][] firstArray = {{1, 2}, {3, 4}};
@@ -76,7 +76,7 @@ public class AdditionOfMatrixTest {
 
 
     @Test(expected = InvalidParameterException.class)
-    private void givenNumberOfRowsAsNegativeAndColumnsAndArraysShouldReturnArrayIndexOutOfBoundsException() {
+    public void givenNumberOfRowsAsNegativeAndColumnsAndArraysShouldReturnArrayIndexOutOfBoundsException() {
         int rows = -2;
         int columns = 2;
         additionOfMatrix.arrayDeclarator(rows, columns);
@@ -88,7 +88,7 @@ public class AdditionOfMatrixTest {
      */
 
     @Test
-    private void givenNumberOfRowsAndColumnsAndArraysShouldReturnAnExpectedArray() {
+    public void givenNumberOfRowsAndColumnsAndArraysShouldReturnAnExpectedArray() {
         int rows = 0;
         int columns = 0;
         int[][] firstArray = {};
@@ -106,7 +106,7 @@ public class AdditionOfMatrixTest {
      */
 
     @Test
-    private void givenNumberOfRowsAndColumnsAndArraysShouldReturnNull() {
+    public void givenNumberOfRowsAndColumnsAndArraysShouldReturnNull() {
         int rows = 0;
         int columns = 0;
         int[][] firstArray = null;

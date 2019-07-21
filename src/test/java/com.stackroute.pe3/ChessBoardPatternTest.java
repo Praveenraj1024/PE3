@@ -13,14 +13,14 @@ public class ChessBoardPatternTest {
 
 
     @BeforeClass
-    private void setUp() {
+    public void setUp() {
         //This method runs even before the test cases and initialize
         // the variable with required value.
         this.chessBoardPattern = new ChessBoardPattern();
     }
 
     @AfterClass
-    private void tearDown() {
+    public void tearDown() {
         //This method runs after the execution of all remaining methods
         // and reassign the required values.
         this.chessBoardPattern = null;
@@ -31,7 +31,7 @@ public class ChessBoardPatternTest {
     array or not if we pass positive integer number as size.
      */
     @Test
-    private void givenNumberOfRowsAndColumnsShouldReturnAnExpectedArray() {
+    public void givenNumberOfRowsAndColumnsShouldReturnAnExpectedArray() {
         int rows = 10;
         int columns = 10;
         assertTrue(chessBoardPattern.arrayDeclarator(rows, columns));
@@ -56,7 +56,7 @@ public class ChessBoardPatternTest {
      */
 
     @Test(expected = InvalidParameterException.class)
-    private void givenNegativeIntegerShouldReturnAnInvalidParameterException() {
+    public void givenNegativeIntegerShouldReturnAnInvalidParameterException() {
         chessBoardPattern.arrayDeclarator(-2, 2);
     }
 /*
@@ -65,7 +65,7 @@ public class ChessBoardPatternTest {
      */
 
     @Test(expected = InvalidParameterException.class)
-    private void givenCharacterShouldReturnAnInvalidParameterException() {
+    public void givenCharacterShouldReturnAnInvalidParameterException() {
         chessBoardPattern.arrayDeclarator('2', '2');
     }
 
@@ -75,7 +75,7 @@ public class ChessBoardPatternTest {
     or not if we pass 0 as number of rows and columns.
      */
     @Test
-    private void givenNumberOfRowsAndColumnsIntegersShouldReturnAnEmptyArray() {
+    public void givenNumberOfRowsAndColumnsIntegersShouldReturnAnEmptyArray() {
         int row = 0;
         int column = 0;
         assertTrue(chessBoardPattern.arrayDeclarator(row, column));
@@ -92,7 +92,7 @@ public class ChessBoardPatternTest {
      */
 
     @Test
-    private void givenNumberOfRowsAndColumnsIntegersShouldReturnAnEmptyArray() {
+    public void givenNumberOfRowsAndColumnsIntegersShouldReturnAnEmptyArray() {
         assertNull(chessBoardPattern.chessBoardMaker());
     }
 

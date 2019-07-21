@@ -13,14 +13,14 @@ public class StudentMarkTest {
     private StudentMark studentMark;
 
     @BeforeClass
-    private void setUp() {
+    public void setUp() {
         //This method runs even before the test cases and initialize
         // the variable with required value.
         this.studentMark = new StudentMark();
     }
 
     @AfterClass
-    private void tearDown() {
+    public void tearDown() {
         //This method runs after the execution of all remaining methods
         // and reassign the required values.
         this.studentMark = null;
@@ -32,7 +32,7 @@ public class StudentMarkTest {
      */
 
     @Test(expected = NegativeArraySizeException.class)
-    private void givenIntegerShouldReturnNegativeArraySizeException() {
+    public void givenIntegerShouldReturnNegativeArraySizeException() {
         studentMark.arrayDeclarator(-2);
     }
 
@@ -41,7 +41,7 @@ public class StudentMarkTest {
     we pass all correct values.
      */
     @Test
-    private void givenIntegerAndArrayShouldReturnASuccessMessage() {
+    public void givenIntegerAndArrayShouldReturnASuccessMessage() {
         int[] studentGrades = {45, 54};
         String expectedOutput = "Successfully Stored";
         assertTrue(studentMark.arrayDeclarator(2));
@@ -53,7 +53,7 @@ public class StudentMarkTest {
     if we pass a character value.
      */
     @Test(expected = InvalidParameterException.class)
-    private void givenCharacterShouldReturnInvalidParameterException() {
+    public void givenCharacterShouldReturnInvalidParameterException() {
         studentMark.arrayDeclarator('4');
     }
 
@@ -63,7 +63,7 @@ public class StudentMarkTest {
     Exception.
      */
     @Test(expected = InvalidParameterException.class)
-    private void givenIntegerAndArrayShouldReturnInvalidParameterException() {
+    public void givenIntegerAndArrayShouldReturnInvalidParameterException() {
         assertTrue(studentMark.arrayDeclarator(4));
         String[] studentGrades = {"89", "87", "47", "65"};
         studentGrades.arrayInitializer(studentGrades);
@@ -74,7 +74,7 @@ public class StudentMarkTest {
     if we pass a value greater than 100.
      */
     @Test
-    private void givenIntegerAndArrayShouldReturnAnErrorMessage() {
+    public void givenIntegerAndArrayShouldReturnAnErrorMessage() {
         assertTrue(studentMark.arrayDeclarator(2));
         int[] studentGrades = {45, 101};
         String expectedOutput = "Grade should be in between 0 and 100";
@@ -87,7 +87,7 @@ public class StudentMarkTest {
      */
 
     @Test(expected = NullPointerException.class)
-    private void givenIntegerAndArrayShouldReturnNullPointerException() {
+    public void givenIntegerAndArrayShouldReturnNullPointerException() {
         assertTrue(studentMark.arrayDeclarator(2));
         int[] studentGrades = null;
         studentGrades.arrayInitializer(studentGrades);

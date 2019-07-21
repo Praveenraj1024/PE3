@@ -12,14 +12,14 @@ public class FirstAndLastDateOfTheWeekTest {
     private FirstAndLastDateOfTheWeek firstAndLastDateOfTheWeek;
 
     @BeforeClass
-    private void setUp() {
+    public void setUp() {
         //This method runs even before the test cases and initialize
         // the variable with required value.
         this.firstAndLastDateOfTheWeek = new FirstAndLastDateOfTheWeek();
     }
 
     @AfterClass
-    private void tearDown() {
+    public void tearDown() {
         //This method runs after the execution of all remaining methods
         // and reassign the required values.
         this.firstAndLastDateOfTheWeek = null;
@@ -32,7 +32,7 @@ public class FirstAndLastDateOfTheWeekTest {
      */
 
     @Test
-    private void givenDateShouldReturnTheFirstAndLastDateOfThatWeek() {
+    public void givenDateShouldReturnTheFirstAndLastDateOfThatWeek() {
         int date = 19;
         int month = 07;
         int year = 2019;
@@ -49,7 +49,7 @@ public class FirstAndLastDateOfTheWeekTest {
 
 
     @Test(expected = InvalidParameterException.class)
-    private void givenDateInStringDataTypeShouldReturnAnInvalidParameterException() {
+    public void givenDateInStringDataTypeShouldReturnAnInvalidParameterException() {
         int date = 27;
         int month = 07;
         String year = "2019";
@@ -63,7 +63,7 @@ public class FirstAndLastDateOfTheWeekTest {
 
 
     @Test(expected = NullPointerException.class)
-    private void givenDateAsNullShouldReturnNullPointerException() {
+    public void givenDateAsNullShouldReturnNullPointerException() {
         firstAndLastDateOfTheWeek.dateInitializer(null, null, null);
     }
 
@@ -72,7 +72,7 @@ public class FirstAndLastDateOfTheWeekTest {
     unexpected value if pass a valid input.
      */
     @Test
-    private void givenDateShouldReturnTheFirstAndLastDateOfThatWeek() {
+    public void givenDateShouldReturnTheFirstAndLastDateOfThatWeek() {
         int date = 19;
         int month = 07;
         int year = 2019;
